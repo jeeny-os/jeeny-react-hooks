@@ -36,7 +36,7 @@ It includes the ApolloProvider component from the [React Apollo Client](https://
 You can get your free API key from the [Jeeny Hub under the Headless menu](https://hub.jeeny.com/headless/api-keys).
 
 ```
-import { JeenyProvider } from "@jeeny-os/jeeny-react"
+import { JeenyProvider } from "@jeeny/jeeny-react"
 <React.StrictMode>
 	<JeenyProvider apiKey="YOUR_API_KEY">
 		<App  />
