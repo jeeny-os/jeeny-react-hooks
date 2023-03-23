@@ -16,8 +16,8 @@ import {
   QueryGetDynamicContainersArgs,
   DynamicContainer,
   DynamicContainerQueryResponse,
-  QueryGetDynamicContainerArgs,
 } from "../../../types/graphql";
+import { QueryGetDynamicContainerArgs } from "../../types/graphql";
 
 export interface DynamicContainerApi {
   getDynamicContainer?: {
