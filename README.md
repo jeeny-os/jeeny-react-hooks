@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to jeeny-react-hooks 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.1-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/jeeny-os/jeeny-react-hooks#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -42,6 +42,14 @@ Yarn
 
 npm
 `npm install @jeeny/jeeny-react-hooks`
+
+## Running tests
+
+Yarn
+`yarn test`
+
+npm
+`npm run test`
 
 ## Authentication
 
