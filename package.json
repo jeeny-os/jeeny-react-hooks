@@ -16,7 +16,7 @@
     "url": "git+https://github.com/jeeny-os/jeeny-react-hooks.git"
   },
   "author": "Jeeny Inc.",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/jeeny-os/jeeny-react-hooks/issues"
   },
