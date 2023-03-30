@@ -43,6 +43,14 @@ Yarn
 npm
 `npm install @jeeny/jeeny-react-hooks`
 
+## Running tests
+
+Yarn
+`yarn test`
+
+npm
+`npm run test`
+
 ## Authentication
 
 You must wrap your application in the JeenyProvider component and pass it your headless API key. This provider allows downstream components to authenticate with the Jeeny graphql server.
