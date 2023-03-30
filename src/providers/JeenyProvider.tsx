@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, createContext } from "react";
 import { ApolloProvider } from "@apollo/client";
 import { createApolloClient } from "../config/apollo/apolloClient";
 
 type JeenyContextType = {};
 const defaultValue: JeenyContextType = {};
 
-export const JeenyContext = React.createContext<JeenyContextType>(defaultValue);
+export const JeenyContext = createContext<JeenyContextType>(defaultValue);
 
 interface JeenyContextProviderProps {
   apiKey: string;
