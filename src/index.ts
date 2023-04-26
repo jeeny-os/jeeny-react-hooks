@@ -1,3 +1,4 @@
+export * from "./types/graphql";
 import { useCompanyApi } from "./api/company/api";
 import { useCompanyUserApi } from "./api/companyUser/api";
 import { useDepartureApi } from "./api/departure/api";
