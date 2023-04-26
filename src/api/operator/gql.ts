@@ -37,8 +37,8 @@ export const GET_OPERATORS = gql`
 
 export const GET_OPERATORS_BY_DEVICE = gql`
   ${SAFE_OPERATOR_FRAGMENT}
-  query getOperatorsByDevice($deviceId: String!) {
-    getOperatorsByDevice(deviceId: $deviceId) {
+  query getOperatorsByDevice {
+    getOperatorsByDevice {
       ...SafeOperator
     }
   }
