@@ -3,8 +3,10 @@ import { ITEM_STORAGE_INVENTORY_AREA_LOCATION_FRAGMENT } from "./fragments";
 
 export const GET_ITEM_STORAGE_INVENTORY_AREA_LOCATION = gql`
   ${ITEM_STORAGE_INVENTORY_AREA_LOCATION_FRAGMENT}
-  query getItemStorageInventoryAreaLocation($id: String!) {
-    getItemStorageInventoryAreaLocation(id: $id) {
+  query getItemStorageInventoryAreaLocation(
+    $data: GetItemStorageInventoryAreaLocationQuery!
+  ) {
+    getItemStorageInventoryAreaLocation(data: $data) {
       ...ItemStorageInventoryAreaLocation
     }
   }

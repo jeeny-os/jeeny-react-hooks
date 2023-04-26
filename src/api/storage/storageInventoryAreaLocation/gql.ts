@@ -7,8 +7,22 @@ import {
 
 export const GET_STORAGE_INVENTORY_AREA_LOCATION = gql`
   ${STORAGE_INVENTORY_AREA_LOCATION_FRAGMENT}
-  query getStorageInventoryAreaLocation($id: String!) {
-    getStorageInventoryAreaLocation(id: $id) {
+  query getStorageInventoryAreaLocation(
+    $facilityId: String!
+    $inventoryAreaId: String!
+    $aisle: String!
+    $bay: String!
+    $shelf: String!
+    $position: String!
+  ) {
+    getStorageInventoryAreaLocation(
+      facilityId: $facilityId
+      inventoryAreaId: $inventoryAreaId
+      aisle: $aisle
+      bay: $bay
+      shelf: $shelf
+      position: $position
+    ) {
       ...StorageInventoryAreaLocation
     }
   }
