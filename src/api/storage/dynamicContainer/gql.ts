@@ -126,13 +126,13 @@ export const SWITCH_DYNAMIC_CONTAINERS = gql`
   ${DYNAMIC_CONTAINER_FRAGMENT}
   mutation switchDynamicContainers(
     $facilityId: String!
-    $box1Id: String!
-    $box2Id: String!
+    $dynamicContainer1Id: String!
+    $dynamicContainer2Id: String!
   ) {
     switchDynamicContainers(
       facilityId: $facilityId
-      box1Id: $box1Id
-      box2Id: $box2Id
+      dynamicContainer1Id: $dynamicContainer1Id
+      dynamicContainer2Id: $dynamicContainer2Id
     ) {
       ...DynamicContainer
     }
