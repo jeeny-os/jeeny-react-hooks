@@ -18,34 +18,6 @@ export const GET_KIT_TEMPLATE_DETAILS = gql`
   }
 `;
 
-export const GET_KIT_TEMPLATE_MEDIA = gql`
-  query getKitTemplateDetails($id: String!) {
-    getKitTemplateDetails(id: $id) {
-      kitTemplate {
-        id
-        images {
-          fileName
-          url
-          size
-          updatedOn
-        }
-        videos {
-          fileName
-          url
-          size
-          updatedOn
-        }
-        files {
-          fileName
-          url
-          size
-          updatedOn
-        }
-      }
-    }
-  }
-`;
-
 export const GET_KIT_TEMPLATE_TREE = gql`
   ${KIT_TEMPLATE_TREE_FRAGMENT}
   query getKitTemplateTree($id: String!) {
@@ -154,6 +126,33 @@ export const DELETE_KIT_TEMPLATE_PART_FROM_KIT_TEMPLATE = gql`
   ) {
     deleteKitTemplatePartFromKitTemplate(data: $data) {
       ...KitTemplatePart
+    }
+  }
+`;
+
+export const GET_IMAGES_FOR_KIT_TEMPLATE = gql`
+  ${FILE_FRAGMENT}
+  query getImagesForKitTemplate($id: String!) {
+    getImagesForKitTemplate(id: $id) {
+      ...File
+    }
+  }
+`;
+
+export const GET_VIDEOS_FOR_KIT_TEMPLATE = gql`
+  ${FILE_FRAGMENT}
+  query getVideosForKitTemplate($id: String!) {
+    getVideosForKitTemplate(id: $id) {
+      ...File
+    }
+  }
+`;
+
+export const GET_FILES_FOR_KIT_TEMPLATE = gql`
+  ${FILE_FRAGMENT}
+  query getFilesForKitTemplate($id: String!) {
+    getFilesForKitTemplate(id: $id) {
+      ...File
     }
   }
 `;

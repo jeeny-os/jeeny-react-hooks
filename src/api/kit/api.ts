@@ -13,7 +13,9 @@ import {
   GET_KIT_TEMPLATE_TREE,
   GET_KIT_TEMPLATE_BOM,
   ADD_KIT_TEMPLATE_PART_TO_KIT_TEMPLATE,
-  GET_KIT_TEMPLATE_MEDIA,
+  GET_FILES_FOR_KIT_TEMPLATE,
+  GET_IMAGES_FOR_KIT_TEMPLATE,
+  GET_VIDEOS_FOR_KIT_TEMPLATE,
 } from "./gql";
 
 export const useKitApi = (custom?: KitApi) => {
@@ -23,14 +25,6 @@ export const useKitApi = (custom?: KitApi) => {
   ] = useLazyQuery(
     custom?.getKitTemplateDetails?.query || GET_KIT_TEMPLATE_DETAILS,
     custom?.getKitTemplateDetails?.options
-  );
-
-  const [
-    getKitTemplateMedia,
-    { data: getKitTemplateMediaData, loading: getKitTemplateMediaLoading },
-  ] = useLazyQuery(
-    custom?.getKitTemplateMedia?.query || GET_KIT_TEMPLATE_MEDIA,
-    custom?.getKitTemplateMedia?.options
   );
 
   const [
@@ -145,6 +139,30 @@ export const useKitApi = (custom?: KitApi) => {
     custom?.deleteKitTemplatePartOptionFromKitTemplatePart?.options
   );
 
+  const [
+    getKitTemplateImages,
+    { data: getKitTemplateImagesData, loading: getKitTemplateImagesLoading },
+  ] = useLazyQuery(
+    custom?.getKitTemplateImages?.query || GET_IMAGES_FOR_KIT_TEMPLATE,
+    custom?.getKitTemplateImages?.options
+  );
+
+  const [
+    getKitTemplateVideos,
+    { data: getKitTemplateVideosData, loading: getKitTemplateVideosLoading },
+  ] = useLazyQuery(
+    custom?.getKitTemplateVideos?.query || GET_VIDEOS_FOR_KIT_TEMPLATE,
+    custom?.getKitTemplateVideos?.options
+  );
+
+  const [
+    getKitTemplateFiles,
+    { data: getKitTemplateFilesData, loading: getKitTemplateFilesLoading },
+  ] = useLazyQuery(
+    custom?.getKitTemplateFiles?.query || GET_FILES_FOR_KIT_TEMPLATE,
+    custom?.getKitTemplateFiles?.options
+  );
+
   return {
     getKitTemplateDetails: {
       query: getKitTemplateDetails,
@@ -211,6 +229,21 @@ export const useKitApi = (custom?: KitApi) => {
       mutation: deleteKitTemplatePartFromKitTemplate,
       data: deleteKitTemplatePartFromKitTemplateData,
       loading: deleteKitTemplatePartFromKitTemplateLoading,
+    },
+    getKitTemplateImages: {
+      get: getKitTemplateImages,
+      data: getKitTemplateImagesData,
+      loading: getKitTemplateImagesLoading,
+    },
+    getKitTemplateVideos: {
+      get: getKitTemplateVideos,
+      data: getKitTemplateVideosData,
+      loading: getKitTemplateVideosLoading,
+    },
+    getKitTemplateFiles: {
+      get: getKitTemplateFiles,
+      data: getKitTemplateFilesData,
+      loading: getKitTemplateFilesLoading,
     },
   };
 };
