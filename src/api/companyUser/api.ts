@@ -82,12 +82,12 @@ export const useCompanyUserApi = (custom?: CompanyUserApi) => {
       data: getCompanyUsersByTeamIdData,
       loading: getCompanyUsersByTeamIdLoading,
     },
-    save: {
+    saveCompanyUser: {
       mutation: saveCompanyUser,
       data: saveCompanyUserData,
       loading: saveCompanyUserLoading,
     },
-    saveAdmin: {
+    saveCompanyUserAdmin: {
       mutation: saveCompanyUserAdmin,
       data: saveCompanyUserAdminData,
       loading: saveCompanyUserAdminLoading,
