@@ -19,24 +19,25 @@ export const GET_ITEM = gql`
 export const GET_ITEM_MEDIA = gql`
   query getItem($id: String!) {
     getItem(id: $id) {
-     id
-     images {
-      url
-      fileName
-      size
-      updatedOn
-    }
-    videos {
-      url
-      fileName
-      size
-      updatedOn
-    }
-    files {
-      url
-      fileName
-      size
-      updatedOn
+      id
+      images {
+        url
+        fileName
+        size
+        updatedOn
+      }
+      videos {
+        url
+        fileName
+        size
+        updatedOn
+      }
+      files {
+        url
+        fileName
+        size
+        updatedOn
+      }
     }
   }
 `;
