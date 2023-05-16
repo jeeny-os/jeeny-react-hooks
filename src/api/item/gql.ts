@@ -3,6 +3,7 @@ import {
   ITEM_DETAILS_FRAGMENT,
   ITEM_FILES_FRAGMENT,
   ITEM_FRAGMENT,
+  ITEM_INVENTORY_HISTORY_FRAGMENT,
   ITEM_WITH_PRIMARY_SUPPLIER_FRAGMENT,
 } from "./fragments";
 
@@ -11,6 +12,15 @@ export const GET_ITEM = gql`
   query getItem($id: String!) {
     getItem(id: $id) {
       ...Item
+    }
+  }
+`;
+
+export const GET_ITEM_HISTORY = gql`
+  ${ITEM_INVENTORY_HISTORY_FRAGMENT}
+  query getItemHistory($itemId: String!) {
+    getItemHistory(itemId: $itemId) {
+      ...InventoryHistoryRecord
     }
   }
 `;
@@ -36,6 +46,15 @@ export const GET_ITEMS = gql`
       items {
         ...Item
       }
+    }
+  }
+`;
+
+export const GET_ITEMS_HISTORY = gql`
+  ${ITEM_INVENTORY_HISTORY_FRAGMENT}
+  query getItemsHistory {
+    getItemsHistory {
+      ...InventoryHistoryRecord
     }
   }
 `;

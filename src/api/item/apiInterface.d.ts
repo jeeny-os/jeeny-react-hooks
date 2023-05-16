@@ -14,6 +14,7 @@ import {
   ItemDetails,
   ItemWithPrimarySupplierQueryResponse,
   QueryGetItemsWithPrimarySupplierArgs,
+  InventoryHistoryRecord,
 } from "../../types/graphql";
 
 export interface ItemApi {
@@ -24,6 +25,16 @@ export interface ItemApi {
         getItem: Item;
       },
       QueryGetItemArgs
+    >;
+  };
+
+  getItemHistory?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<
+      {
+        getItemHistory: InventoryHistoryRecord[];
+      },
+      QueryGetItemHistoryArgs
     >;
   };
 
@@ -45,6 +56,13 @@ export interface ItemApi {
       },
       QueryGetItemsArgs
     >;
+  };
+
+  getItemsHistory?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<{
+      getItemsHistory: InventoryHistoryRecord[];
+    }>;
   };
 
   getItemsWithPrimarySupplier?: {
