@@ -28,6 +28,16 @@ export interface ItemApi {
     >;
   };
 
+  getItemMedia?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<
+      {
+        getItem: Pick<Item, "id" | "images" | "videos" | "files">;
+      },
+      QueryGetItemArgs
+    >;
+  };
+
   getItemHistory?: {
     query?: DocumentNode;
     options?: QueryFunctionOptions<

@@ -10,6 +10,32 @@ export const GET_SUPPLIER = gql`
   }
 `;
 
+export const GET_SUPPLIER_MEDIA = gql`
+  query getSupplier($id: String!) {
+    getSupplier(id: $id) {
+      id
+      images {
+        fileName
+        url
+        size
+        updatedOn
+      }
+      videos {
+        fileName
+        url
+        size
+        updatedOn
+      }
+      files {
+        fileName
+        url
+        size
+        updatedOn
+      }
+    }
+  }
+`;
+
 export const GET_SUPPLIERS = gql`
   ${SUPPLIER_FRAGMENT}
   query getSuppliers(

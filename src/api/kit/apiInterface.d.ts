@@ -40,6 +40,18 @@ export interface KitApi {
     >;
   };
 
+  getKitTemplateMedia?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<
+      {
+        getKitTemplateDetails: {
+          kitTemplate: Pick<KitTemplate, "id" | "images" | "videos" | "files">;
+        };
+      },
+      QueryGetKitTemplateDetailsArgs
+    >;
+  };
+
   getKitTemplateTree?: {
     query?: DocumentNode;
     options?: QueryFunctionOptions<

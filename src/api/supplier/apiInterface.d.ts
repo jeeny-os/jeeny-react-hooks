@@ -23,6 +23,16 @@ export interface SupplierApi {
     >;
   };
 
+  getSupplierMedia?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<
+      {
+        getSupplier: Pick<Supplier, "id" | "images" | "videos" | "files">;
+      },
+      QueryGetSupplierArgs
+    >;
+  };
+
   getSuppliers?: {
     query?: DocumentNode;
     options?: QueryFunctionOptions<

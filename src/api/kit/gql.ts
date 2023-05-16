@@ -18,6 +18,34 @@ export const GET_KIT_TEMPLATE_DETAILS = gql`
   }
 `;
 
+export const GET_KIT_TEMPLATE_MEDIA = gql`
+  query getKitTemplateDetails($id: String!) {
+    getKitTemplateDetails(id: $id) {
+      kitTemplate {
+        id
+        images {
+          fileName
+          url
+          size
+          updatedOn
+        }
+        videos {
+          fileName
+          url
+          size
+          updatedOn
+        }
+        files {
+          fileName
+          url
+          size
+          updatedOn
+        }
+      }
+    }
+  }
+`;
+
 export const GET_KIT_TEMPLATE_TREE = gql`
   ${KIT_TEMPLATE_TREE_FRAGMENT}
   query getKitTemplateTree($id: String!) {
