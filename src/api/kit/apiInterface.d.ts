@@ -40,18 +40,6 @@ export interface KitApi {
     >;
   };
 
-  getKitTemplateMedia?: {
-    query?: DocumentNode;
-    options?: QueryFunctionOptions<
-      {
-        getKitTemplateDetails: {
-          kitTemplate: Pick<KitTemplate, "id" | "images" | "videos" | "files">;
-        };
-      },
-      QueryGetKitTemplateDetailsArgs
-    >;
-  };
-
   getKitTemplateTree?: {
     query?: DocumentNode;
     options?: QueryFunctionOptions<
@@ -159,6 +147,36 @@ export interface KitApi {
         deleteKitTemplatePartFromKitTemplate: KitTemplatePart;
       },
       MutationDeleteKitTemplatePartFromKitTemplateArgs
+    >;
+  };
+
+  getKitTemplateImages?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<
+      {
+        getImagesForKitTemplate: FileStorageRecord[];
+      },
+      QueryGetImagesForKitTemplateArgs
+    >;
+  };
+
+  getKitTemplateVideos?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<
+      {
+        getVideosForKitTemplate: FileStorageRecord[];
+      },
+      QueryGetVideosForKitTemplateArgs
+    >;
+  };
+
+  getKitTemplateFiles?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<
+      {
+        getFilesForKitTemplate: FileStorageRecord[];
+      },
+      QueryGetFilesForKitTemplateArgs
     >;
   };
 }
