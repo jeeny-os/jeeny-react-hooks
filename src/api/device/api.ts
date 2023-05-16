@@ -71,12 +71,12 @@ export const useDeviceApi = (custom?: DeviceApi) => {
       loading: getDevicesLoading,
     },
     getDeviceAccessToken: {
-      get: getDeviceAccessToken,
+      query: getDeviceAccessToken,
       data: getDeviceAccessTokenData,
       loading: getDeviceAccessTokenLoading,
     },
     createDevice: {
-      create: createDevice,
+      mutation: createDevice,
       data: createDeviceData,
       loading: createDeviceLoading,
     },
