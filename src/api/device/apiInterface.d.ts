@@ -11,8 +11,7 @@ import {
   Device,
   DeviceQueryResponse,
   MutationDeleteDeviceArgs,
-  // DeviceDetails,
-  // QueryGetDeviceDetailsArgs,
+  MutationCreateDeviceArgs,
 } from "../../types/graphql";
 
 export interface DeviceApi {
@@ -33,6 +32,23 @@ export interface DeviceApi {
         getDevices: DeviceQueryResponse;
       },
       QueryGetDevicesArgs
+    >;
+  };
+
+  getDeviceAccessToken?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<{
+      getDeviceAccessToken: string;
+    }>;
+  };
+
+  createDevice?: {
+    mutation?: DocumentNode;
+    options?: MutationFunctionOptions<
+      {
+        createDevice: Device;
+      },
+      MutationCreateDeviceArgs
     >;
   };
 
