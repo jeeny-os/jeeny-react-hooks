@@ -7,11 +7,21 @@ import {
   SAVE_ITEM,
   GET_ITEM_DETAILS,
   GET_ITEMS_WITH_PRIMARY_SUPPLIER,
+  GET_ITEMS_HISTORY,
+  GET_ITEM_HISTORY,
 } from "./gql";
 
 export const useItemApi = (custom?: ItemApi) => {
   const [getItem, { data: getItemData, loading: getItemLoading }] =
     useLazyQuery(custom?.getItem?.query || GET_ITEM, custom?.getItem?.options);
+
+  const [
+    getItemHistory,
+    { data: getItemHistoryData, loading: getItemHistoryLoading },
+  ] = useLazyQuery(
+    custom?.getItemHistory?.query || GET_ITEM_HISTORY,
+    custom?.getItemHistory?.options
+  );
 
   const [
     getItemDetails,
@@ -31,6 +41,14 @@ export const useItemApi = (custom?: ItemApi) => {
   ] = useLazyQuery(
     custom?.getItems?.query || GET_ITEMS,
     custom?.getItems?.options
+  );
+
+  const [
+    getItemsHistory,
+    { data: getItemsHistoryData, loading: getItemsHistoryLoading },
+  ] = useLazyQuery(
+    custom?.getItemsHistory?.query || GET_ITEMS_HISTORY,
+    custom?.getItemsHistory?.options
   );
 
   const [
@@ -64,6 +82,11 @@ export const useItemApi = (custom?: ItemApi) => {
       data: getItemData,
       loading: getItemLoading,
     },
+    getItemHistory: {
+      query: getItemHistory,
+      data: getItemHistoryData,
+      loading: getItemHistoryLoading,
+    },
     getItemDetails: {
       query: getItemDetails,
       data: getItemDetailsData,
@@ -74,6 +97,11 @@ export const useItemApi = (custom?: ItemApi) => {
       data: getItemsData,
       fetchMore: getItemsFetchMore,
       loading: getItemsLoading,
+    },
+    getItemsHistory: {
+      query: getItemsHistory,
+      data: getItemsHistoryData,
+      loading: getItemsHistoryLoading,
     },
     getItemsWithPrimarySupplier: {
       query: getItemsWithPrimarySupplier,
