@@ -2,6 +2,19 @@ import { gql } from "@apollo/client";
 import { SAFE_OPERATOR_FRAGMENT } from "../1init/fragments";
 import { DEVICE_FRAGMENT } from "../device/fragments";
 
+export const OPERATOR_DETAILS_FRAGMENT = gql`
+  fragment OperatorDetails on OperatorDetails {
+    operator {
+      ...SafeOperator
+    }
+    device {
+      ...Device
+    }
+  }
+  ${SAFE_OPERATOR_FRAGMENT}
+  ${DEVICE_FRAGMENT}
+`;
+
 export const OPERATOR_TOKEN_FRAGMENT = gql`
   fragment OperatorToken on OperatorToken {
     accessToken

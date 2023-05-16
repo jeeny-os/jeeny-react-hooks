@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 import { OPERATOR_FRAGMENT, SAFE_OPERATOR_FRAGMENT } from "../1init/fragments";
+import { OPERATOR_DETAILS_FRAGMENT } from "./fragments";
 
 export const GET_OPERATOR = gql`
   ${SAFE_OPERATOR_FRAGMENT}
@@ -10,11 +11,17 @@ export const GET_OPERATOR = gql`
   }
 `;
 
+export const GET_OPERATOR_PIN_CODE = gql`
+  query getOperatorPinCode($id: String!) {
+    getOperatorPinCode(id: $id)
+  }
+`;
+
 export const GET_OPERATOR_DETAILS = gql`
-  ${OPERATOR_FRAGMENT}
+  ${OPERATOR_DETAILS_FRAGMENT}
   query getOperatorDetails($id: String!) {
     getOperatorDetails(id: $id) {
-      ...Operator
+      ...OperatorDetails
     }
   }
 `;
