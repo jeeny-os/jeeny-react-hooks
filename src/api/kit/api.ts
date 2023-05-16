@@ -169,11 +169,6 @@ export const useKitApi = (custom?: KitApi) => {
       data: getKitTemplateDetailsData,
       loading: getKitTemplateDetailsLoading,
     },
-    getKitTemplateMedia: {
-      query: getKitTemplateMedia,
-      data: getKitTemplateMediaData,
-      loading: getKitTemplateMediaLoading,
-    },
     getKitTemplateTree: {
       query: getKitTemplateTree,
       data: getKitTemplateTreeData,
