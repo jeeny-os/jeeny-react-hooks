@@ -9,11 +9,20 @@ import {
   GET_ITEMS_WITH_PRIMARY_SUPPLIER,
   GET_ITEMS_HISTORY,
   GET_ITEM_HISTORY,
+  GET_ITEM_MEDIA,
 } from "./gql";
 
 export const useItemApi = (custom?: ItemApi) => {
   const [getItem, { data: getItemData, loading: getItemLoading }] =
     useLazyQuery(custom?.getItem?.query || GET_ITEM, custom?.getItem?.options);
+
+  const [
+    getItemMedia,
+    { data: getItemMediaData, loading: getItemMediaLoading },
+  ] = useLazyQuery(
+    custom?.getItemMedia?.query || GET_ITEM_MEDIA,
+    custom?.getItemMedia?.options
+  );
 
   const [
     getItemHistory,
@@ -81,6 +90,11 @@ export const useItemApi = (custom?: ItemApi) => {
       query: getItem,
       data: getItemData,
       loading: getItemLoading,
+    },
+    getItemMedia: {
+      query: getItemMedia,
+      data: getItemMediaData,
+      loading: getItemMediaLoading,
     },
     getItemHistory: {
       query: getItemHistory,

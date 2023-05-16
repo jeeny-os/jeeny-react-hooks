@@ -13,6 +13,7 @@ import {
   GET_KIT_TEMPLATE_TREE,
   GET_KIT_TEMPLATE_BOM,
   ADD_KIT_TEMPLATE_PART_TO_KIT_TEMPLATE,
+  GET_KIT_TEMPLATE_MEDIA,
 } from "./gql";
 
 export const useKitApi = (custom?: KitApi) => {
@@ -22,6 +23,14 @@ export const useKitApi = (custom?: KitApi) => {
   ] = useLazyQuery(
     custom?.getKitTemplateDetails?.query || GET_KIT_TEMPLATE_DETAILS,
     custom?.getKitTemplateDetails?.options
+  );
+
+  const [
+    getKitTemplateMedia,
+    { data: getKitTemplateMediaData, loading: getKitTemplateMediaLoading },
+  ] = useLazyQuery(
+    custom?.getKitTemplateMedia?.query || GET_KIT_TEMPLATE_MEDIA,
+    custom?.getKitTemplateMedia?.options
   );
 
   const [
@@ -141,6 +150,11 @@ export const useKitApi = (custom?: KitApi) => {
       query: getKitTemplateDetails,
       data: getKitTemplateDetailsData,
       loading: getKitTemplateDetailsLoading,
+    },
+    getKitTemplateMedia: {
+      query: getKitTemplateMedia,
+      data: getKitTemplateMediaData,
+      loading: getKitTemplateMediaLoading,
     },
     getKitTemplateTree: {
       query: getKitTemplateTree,

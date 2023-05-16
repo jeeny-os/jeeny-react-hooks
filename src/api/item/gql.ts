@@ -16,6 +16,31 @@ export const GET_ITEM = gql`
   }
 `;
 
+export const GET_ITEM_MEDIA = gql`
+  query getItem($id: String!) {
+    getItem(id: $id) {
+     id
+     images {
+      url
+      fileName
+      size
+      updatedOn
+    }
+    videos {
+      url
+      fileName
+      size
+      updatedOn
+    }
+    files {
+      url
+      fileName
+      size
+      updatedOn
+    }
+  }
+`;
+
 export const GET_ITEM_HISTORY = gql`
   ${ITEM_INVENTORY_HISTORY_FRAGMENT}
   query getItemHistory($itemId: String!) {
