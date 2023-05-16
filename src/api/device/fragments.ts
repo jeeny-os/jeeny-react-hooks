@@ -11,22 +11,22 @@ export const DEVICE_INFO_FRAGMENT = gql`
   }
 `;
 
-export const DEVICE_OPERATOR_FRAGMENT = gql`
-  fragment DeviceOperator on DeviceOperator {
+export const LOG_OPERATOR_FRAGMENT = gql`
+  fragment LogOperator on LogOperator {
     id
     firstName
     lastName
   }
 `;
 
-export const DEVICE_OPERATOR_ACCESS_FRAGMENT = gql`
+export const OPERATOR_ACCESS_FRAGMENT = gql`
   fragment OperatorAccess on OperatorAccess {
     createdOn
     operator {
-      ...DeviceOperator
+      ...LogOperator
     }
   }
-  ${DEVICE_OPERATOR_FRAGMENT}
+  ${LOG_OPERATOR_FRAGMENT}
 `;
 
 export const DEVICE_FRAGMENT = gql`
@@ -49,7 +49,7 @@ export const DEVICE_FRAGMENT = gql`
     updatedOn
   }
   ${DEVICE_INFO_FRAGMENT}
-  ${DEVICE_OPERATOR_ACCESS_FRAGMENT}
+  ${OPERATOR_ACCESS_FRAGMENT}
 `;
 
 export const DEVICE_DETAILS_FRAGMENT = gql`
