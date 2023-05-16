@@ -407,6 +407,25 @@ export const ARRIVAL_DETAILS_WITH_STATUS_FRAGMENT = gql`
     arrivalDeliveryLineItems {
       ...ArrivalDeliveryLineItem
     }
+    bidRequestLineItems {
+      companyId
+      bidRequestId
+      bidRequestNumber
+      isBidRequestLineItemClosed
+      isBidRequestClosed
+      itemId
+      unitOfMeasure
+      arrivalId
+      winnerSupplierId
+      type
+      internalNote
+      externalNote
+      quantity
+      targetPpu
+      createdBy
+      createdOn
+      updatedOn
+    }
   }
   ${ARRIVAL_WITH_STATUS_FRAGMENT}
   ${ARRIVAL_LINE_ITEM_WITH_STATUS_FRAGMENT}
