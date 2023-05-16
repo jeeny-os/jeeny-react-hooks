@@ -26,6 +26,21 @@ export const GET_DEVICES = gql`
   }
 `;
 
+export const GET_DEVICE_ACCESS_TOKEN = gql`
+  query getDeviceAccessToken {
+    getDeviceAccessToken
+  }
+`;
+
+export const CREATE_DEVICE = gql`
+  ${DEVICE_FRAGMENT}
+  mutation createDevice($data: DeviceInput!) {
+    createDevice(data: $data) {
+      ...Device
+    }
+  }
+`;
+
 export const SAVE_DEVICE = gql`
   ${DEVICE_FRAGMENT}
   mutation saveDevice($data: DeviceUpdateInput!, $id: String!) {

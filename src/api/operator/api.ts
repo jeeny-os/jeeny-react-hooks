@@ -7,6 +7,7 @@ import {
   CREATE_OPERATOR,
   SAVE_OPERATOR,
   GET_OPERATORS_BY_DEVICE,
+  GET_OPERATOR_PIN_CODE,
 } from "./gql";
 
 export const useOperatorApi = (custom?: OperatorApi) => {
@@ -15,6 +16,14 @@ export const useOperatorApi = (custom?: OperatorApi) => {
       custom?.getOperator?.query || GET_OPERATOR,
       custom?.getOperator?.options
     );
+
+  const [
+    getOperatorPinCode,
+    { data: getOperatorPinCodeData, loading: getOperatorPinCodeLoading },
+  ] = useLazyQuery(
+    custom?.getOperatorPinCode?.query || GET_OPERATOR_PIN_CODE,
+    custom?.getOperatorPinCode?.options
+  );
 
   const [
     getOperators,
@@ -62,6 +71,11 @@ export const useOperatorApi = (custom?: OperatorApi) => {
       data: getOperatorData,
       loading: getOperatorLoading,
     },
+    getOperatorPinCode: {
+      query: getOperatorPinCode,
+      data: getOperatorPinCodeData,
+      loading: getOperatorPinCodeLoading,
+    },
     getOperators: {
       query: getOperators,
       data: getOperatorsData,
@@ -77,12 +91,12 @@ export const useOperatorApi = (custom?: OperatorApi) => {
       data: getOperatorsByTeamIdData,
       loading: getOperatorsByTeamIdLoading,
     },
-    create: {
+    createOperator: {
       mutation: createOperator,
       data: createOperatorData,
       loading: createOperatorLoading,
     },
-    save: {
+    saveOperator: {
       mutation: saveOperator,
       data: saveOperatorData,
       loading: saveOperatorLoading,

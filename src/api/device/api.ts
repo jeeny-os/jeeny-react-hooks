@@ -1,6 +1,13 @@
 import { useLazyQuery, useMutation } from "@apollo/client";
 import { DeviceApi } from "./apiInterface";
-import { DELETE_DEVICE, GET_DEVICE, GET_DEVICES, SAVE_DEVICE } from "./gql";
+import {
+  CREATE_DEVICE,
+  DELETE_DEVICE,
+  GET_DEVICE,
+  GET_DEVICES,
+  GET_DEVICE_ACCESS_TOKEN,
+  SAVE_DEVICE,
+} from "./gql";
 
 export const useDeviceApi = (custom?: DeviceApi) => {
   const [getDevice, { data: getDeviceData, loading: getDeviceLoading }] =
@@ -19,6 +26,22 @@ export const useDeviceApi = (custom?: DeviceApi) => {
   ] = useLazyQuery(
     custom?.getDevices?.query || GET_DEVICES,
     custom?.getDevices?.options
+  );
+
+  const [
+    getDeviceAccessToken,
+    { data: getDeviceAccessTokenData, loading: getDeviceAccessTokenLoading },
+  ] = useLazyQuery(
+    custom?.getDeviceAccessToken?.query || GET_DEVICE_ACCESS_TOKEN,
+    custom?.getDeviceAccessToken?.options
+  );
+
+  const [
+    createDevice,
+    { data: createDeviceData, loading: createDeviceLoading },
+  ] = useMutation(
+    custom?.createDevice?.mutation || CREATE_DEVICE,
+    custom?.createDevice?.options
   );
 
   const [saveDevice, { data: saveDeviceData, loading: saveDeviceLoading }] =
@@ -46,6 +69,16 @@ export const useDeviceApi = (custom?: DeviceApi) => {
       data: getDevicesData,
       fetchMore: getDevicesFetchMore,
       loading: getDevicesLoading,
+    },
+    getDeviceAccessToken: {
+      query: getDeviceAccessToken,
+      data: getDeviceAccessTokenData,
+      loading: getDeviceAccessTokenLoading,
+    },
+    createDevice: {
+      mutation: createDevice,
+      data: createDeviceData,
+      loading: createDeviceLoading,
     },
     saveDevice: {
       mutation: saveDevice,
