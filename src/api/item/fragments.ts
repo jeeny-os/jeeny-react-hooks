@@ -22,6 +22,17 @@ export const ITEM_ARRIVAL_FRAGMENT = gql`
   }
 `;
 
+export const ITEM_INVENTORY_HISTORY_FRAGMENT = gql`
+  fragment InventoryHistoryRecord on InventoryHistoryRecord {
+    itemId
+    facilityId
+    ledger
+    days
+    addition
+    deduction
+  }
+`;
+
 export const ITEM_UNITS_OF_MEASURE_FRAGMENT = gql`
   fragment ItemUnitsOfMeasure on ItemUnitsOfMeasure {
     bom
