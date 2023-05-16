@@ -226,17 +226,17 @@ export const useKitApi = (custom?: KitApi) => {
       loading: deleteKitTemplatePartFromKitTemplateLoading,
     },
     getKitTemplateImages: {
-      get: getKitTemplateImages,
+      query: getKitTemplateImages,
       data: getKitTemplateImagesData,
       loading: getKitTemplateImagesLoading,
     },
     getKitTemplateVideos: {
-      get: getKitTemplateVideos,
+      query: getKitTemplateVideos,
       data: getKitTemplateVideosData,
       loading: getKitTemplateVideosLoading,
     },
     getKitTemplateFiles: {
-      get: getKitTemplateFiles,
+      query: getKitTemplateFiles,
       data: getKitTemplateFilesData,
       loading: getKitTemplateFilesLoading,
     },
