@@ -10,6 +10,7 @@ import {
   QueryGetSuppliersArgs,
   Supplier,
   SupplierQueryResponse,
+  SupplierDetails,
 } from "../../types/graphql";
 
 export interface SupplierApi {
@@ -20,6 +21,16 @@ export interface SupplierApi {
         getSupplier: Supplier;
       },
       QueryGetSupplierArgs
+    >;
+  };
+
+  getSupplierDetails?: {
+    query?: DocumentNode;
+    options?: QueryFunctionOptions<
+      {
+        getSupplierDetails: SupplierDetails;
+      },
+      QueryGetSupplierDetailsArgs
     >;
   };
 

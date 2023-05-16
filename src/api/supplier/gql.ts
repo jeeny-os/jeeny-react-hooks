@@ -1,11 +1,20 @@
 import { gql } from "@apollo/client";
-import { SUPPLIER_FRAGMENT } from "./fragments";
+import { SUPPLIER_DETAILS_FRAGMENT, SUPPLIER_FRAGMENT } from "./fragments";
 
 export const GET_SUPPLIER = gql`
   ${SUPPLIER_FRAGMENT}
   query getSupplier($id: String!) {
     getSupplier(id: $id) {
       ...Supplier
+    }
+  }
+`;
+
+export const GET_SUPPLIER_DETAILS = gql`
+  ${SUPPLIER_DETAILS_FRAGMENT}
+  query getSupplierDetails($id: String!) {
+    getSupplierDetails(id: $id) {
+      ...SupplierDetails
     }
   }
 `;

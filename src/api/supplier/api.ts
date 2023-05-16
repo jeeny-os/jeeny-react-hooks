@@ -4,6 +4,7 @@ import {
   CREATE_SUPPLIER,
   GET_SUPPLIER,
   GET_SUPPLIERS,
+  GET_SUPPLIER_DETAILS,
   GET_SUPPLIER_MEDIA,
   SAVE_SUPPLIER,
 } from "./gql";
@@ -14,6 +15,14 @@ export const useSupplierApi = (custom?: SupplierApi) => {
       custom?.getSupplier?.query || GET_SUPPLIER,
       custom?.getSupplier?.options
     );
+
+  const [
+    getSupplierDetails,
+    { data: getSupplierDetailsData, loading: getSupplierDetailsLoading },
+  ] = useLazyQuery(
+    custom?.getSupplierDetails?.query || GET_SUPPLIER_DETAILS,
+    custom?.getSupplierDetails?.options
+  );
 
   const [
     getSupplierMedia,
@@ -56,6 +65,11 @@ export const useSupplierApi = (custom?: SupplierApi) => {
       query: getSupplier,
       data: getSupplierData,
       loading: getSupplierLoading,
+    },
+    getSupplierDetails: {
+      query: getSupplierDetails,
+      data: getSupplierDetailsData,
+      loading: getSupplierDetailsLoading,
     },
     getSupplierMedia: {
       query: getSupplierMedia,
