@@ -199,27 +199,27 @@ export const useDepartureApi = (custom?: DepartureApi) => {
       fetchMore: getDeparturesByExternalCustomerIdFetchMore,
       loading: getDeparturesByExternalCustomerIdLoading,
     },
-    create: {
+    createDeparture: {
       mutation: createDeparture,
       data: createDepartureData,
       loading: createDepartureLoading,
     },
-    save: {
+    saveDeparture: {
       mutation: saveDeparture,
       data: saveDepartureData,
       loading: saveDepartureLoading,
     },
-    createLineItem: {
+    createDepartureLineItem: {
       mutation: createDepartureLineItem,
       data: createDepartureLineItemData,
       loading: createDepartureLineItemLoading,
     },
-    saveLineItem: {
+    saveDepartureLineItem: {
       mutation: saveDepartureLineItem,
       data: saveDepartureLineItemData,
       loading: saveDepartureLineItemLoading,
     },
-    deleteLineItem: {
+    deleteDepartureLineItem: {
       mutation: deleteDepartureLineItem,
       data: deleteDepartureLineItemData,
       loading: deleteDepartureLineItemLoading,
@@ -230,12 +230,12 @@ export const useDepartureApi = (custom?: DepartureApi) => {
       fetchMore: getDepartureLineItemsByItemIdFetchMore,
       loading: getDepartureLineItemsByItemIdLoading,
     },
-    createPickList: {
+    createDeparturePickList: {
       mutation: createDeparturePickList,
       data: createDeparturePickListData,
       loading: createDeparturePickListLoading,
     },
-    deletePickList: {
+    deleteDeparturePickList: {
       mutation: deleteDeparturePickList,
       data: deleteDeparturePickListData,
       loading: deleteDeparturePickListLoading,
@@ -246,7 +246,6 @@ export const useDepartureApi = (custom?: DepartureApi) => {
       fetchMore: getDeparturePickListsFetchMore,
       loading: getDeparturePickListsLoading,
     },
-
     getDeparturePickListsByFacilityId: {
       query: getDeparturePickListsByFacilityId,
       data: getDeparturePickListsByFacilityIdData,
@@ -353,37 +352,37 @@ const useDepartureApi2 = (custom?: DepartureApi) => {
       data: getDeparturePickListLineItemsByItemIdData,
       loading: getDeparturePickListLineItemsByItemIdLoading,
     },
-    createPickListLineItem: {
+    createDeparturePickListLineItem: {
       mutation: createDeparturePickListLineItem,
       data: createDeparturePickListLineItemData,
       loading: createDeparturePickListLineItemLoading,
     },
-    savePickListLineItem: {
+    saveDeparturePickListLineItem: {
       mutation: saveDeparturePickListLineItem,
       data: saveDeparturePickListLineItemData,
       loading: saveDeparturePickListLineItemLoading,
     },
-    deletePickListLineItem: {
+    deleteDeparturePickListLineItem: {
       mutation: deleteDeparturePickListLineItem,
       data: deleteDeparturePickListLineItemData,
       loading: deleteDeparturePickListLineItemLoading,
     },
-    createPick: {
+    createDeparturePick: {
       mutation: createDeparturePick,
       data: createDeparturePickData,
       loading: createDeparturePickLoading,
     },
-    deletePick: {
+    deleteDeparturePick: {
       mutation: deleteDeparturePick,
       data: deleteDeparturePickData,
       loading: deleteDeparturePickLoading,
     },
-    deletePickLineItem: {
+    deleteDeparturePickLineItem: {
       mutation: deleteDeparturePickLineItem,
       data: deleteDeparturePickLineItemData,
       loading: deleteDeparturePickLineItemLoading,
     },
-    pickStorageLocation: {
+    pickStorageLocationForDeparture: {
       mutation: pickStorageLocationForDeparture,
       data: pickStorageLocationForDepartureData,
       loading: pickStorageLocationForDepartureLoading,

@@ -4,6 +4,7 @@ import { ITEM_FRAGMENT } from "../item/fragments";
 export const KIT_TEMPLATE_DIMENSIONS = gql`
   fragment KitTemplateDimensions on KitTemplateDimensions {
     numberOfDimensions
+    unitOfMeasure
     width
     height
     length
